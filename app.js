@@ -43,9 +43,46 @@ class Book{
         <td><a href='#' class="btn btn-danger btn-sm delete">X</a></td>
         </tr>`;
         list.appendChild(row);
-    }        
     }
-//Store class
+    static clearFields(){
+        document.querySelector('#title').value=' ';
+        document.querySelector('#isbn').value=' ';
+        document.querySelector('#author').value=' ';
+    }  
+    
+    static deleteBooks(el){
+        if(el.classList.contains('delete')){
+            el.parentElement.parentElement.remove(); 
+        }
+    }
+    
+    }
+//Store class: Handle Storage
 
-//Event
-document.addEventListener('DOMContentLoaded',UI.displayBooks)
+//Event : display books
+document.addEventListener('DOMContentLoaded',UI.displayBooks);
+
+
+//Event Add a book
+document.querySelector('#book-form').addEventListener('submit',(e)=>{
+    e.preventDefault();
+
+    //Get form values
+    const title = document.querySelector('#title').value;
+    const author = document.querySelector('#author').value;
+    const isbn = document.querySelector('#isbn').value;
+
+    const book = new Book(title,author,isbn);
+
+    UI.addBookToList(book);
+
+    //Clear Fields
+    UI.clearFields()
+
+});
+
+// Event: Remove a Book
+
+document.querySelector('#book-list').addEventListener('click',(e)=>{
+     
+})
