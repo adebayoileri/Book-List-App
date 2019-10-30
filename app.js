@@ -6,6 +6,7 @@ class Book{
         this.isbn=isbn;
     }
 }
+
 //UI class
     class UI{
         static displayBooks(){
@@ -30,6 +31,7 @@ class Book{
             const books =StoredBooks;
            books.forEach((book)=>UI.addBookToList(book));
         }
+
     static addBookToList(book){
         const list = document.querySelector('#book-list');
 
@@ -44,11 +46,13 @@ class Book{
         </tr>`;
         list.appendChild(row);
     }
+
     static clearFields(){
         document.querySelector('#title').value='';
         document.querySelector('#isbn').value='';
         document.querySelector('#author').value='';
     }  
+
     static showAlert(message,className){
         const div = document.createElement('div');
         div.classList=`alert alert-${className}`;
@@ -61,6 +65,7 @@ class Book{
             document.querySelector('.alert').remove()
         },2500)
     }
+
     static deleteBook(el){
         if(el.classList.contains('delete')){
             el.parentElement.parentElement.remove(); 
@@ -69,6 +74,7 @@ class Book{
     
     }
 //Store class: Handle Storage
+
 
 //Event : display books
 document.addEventListener('DOMContentLoaded',UI.displayBooks);
