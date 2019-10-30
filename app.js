@@ -50,7 +50,7 @@ class Book{
         document.querySelector('#author').value=' ';
     }  
     
-    static deleteBooks(el){
+    static deleteBook(el){
         if(el.classList.contains('delete')){
             el.parentElement.parentElement.remove(); 
         }
@@ -72,6 +72,12 @@ document.querySelector('#book-form').addEventListener('submit',(e)=>{
     const author = document.querySelector('#author').value;
     const isbn = document.querySelector('#isbn').value;
 
+    //Validate
+    if(title ==='' || author ==='' || isbn ===''){
+        alert('Please fill all fields');
+    }else{
+     //Instatntiate Book
+     
     const book = new Book(title,author,isbn);
 
     UI.addBookToList(book);
@@ -79,10 +85,11 @@ document.querySelector('#book-form').addEventListener('submit',(e)=>{
     //Clear Fields
     UI.clearFields()
 
+    }
 });
 
 // Event: Remove a Book
 
 document.querySelector('#book-list').addEventListener('click',(e)=>{
-     
-})
+     UI.deleteBook(e.target);
+});
