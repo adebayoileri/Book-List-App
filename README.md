@@ -3,3 +3,4 @@ The most basic way of keeping track of what you read is simply to keep a book lo
 
 ### Badges
 [![Netlify Status](https://api.netlify.com/api/v1/badges/68ea3929-973f-4dcd-830f-7af2561a8a2c/deploy-status)](https://app.netlify.com/sites/mybooklistapp/deploys)
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
